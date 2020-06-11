@@ -1,0 +1,101 @@
+<%- include('./partials/header') %>
+
+<div class="ui main text container">
+    <div class="ui huge header centered">RESTful Recipe App</div>
+    
+                
+
+
+
+
+
+
+
+
+            <!-- <% recipes.forEach(function(recipe) { %>
+                <div class="item ">
+                    <div class="image">
+                        <img src="<%= recipe.image %>">
+                    </div>
+                    <div class="content">
+                        <a class="header" href="/recipes/<%=recipe._id%>"><%=recipe.title%></a>
+                            <div class="meta">
+                                <span> <%=recipe.created.toDateString()%></span>
+                            </div>
+                            <div class="description">
+                                <p><%-recipe.body.substring(0,100)%>...</p>
+                            </div>
+                            <div class="extra">
+                                <a class="ui floated basic button" href="/recipes/<%=recipe._id%>">
+                                    Read More
+                                    <i class="icon right chevron"></i>
+                                </a>
+                            </div>
+                    </div>
+                    
+                </div>
+            <% }) %>    -->
+</div>
+<div class="main ui container">
+    <div class="ui link cards stackable three ">
+        <% recipes.forEach(function(recipe) { %>
+            <div class="card">
+              <div class="image">
+                <img src="<%= recipe.image %>">
+              </div>
+              <div class="content">
+                <div class="header"><%=recipe.title%></div>
+                <div class="meta">
+                  <a>Friends</a>
+                </div>
+                <div class="description">
+                    <%-recipe.body.substring(0,100)%>
+                </div>
+              </div>
+              <div class="extra content">
+                <span class="right floated">
+                  Added <%=recipe.created.toDateString()%>
+                </span>
+                <span>
+                  <i class="heart icon"></i>
+                  Likes
+                </span>
+              </div>
+            </div>
+            <% }) %>  
+        </div> 
+</div>
+
+
+<!-- <div class="ui link cards">
+<% recipes.forEach(function(recipe) { %>
+    <div class="card">
+      <div class="image">
+        <img src="<%= recipe.image %>">
+      </div>
+      <div class="content">
+        <div class="header"><%=recipe.title%></div>
+        <div class="meta">
+          <a>Friends</a>
+        </div>
+        <div class="description">
+            <%-recipe.body.substring(0,100)%>
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated">
+          Added <%=recipe.created.toDateString()%>
+        </span>
+        <span>
+          <i class="heart icon"></i>
+          Likes
+        </span>
+      </div>
+    </div>
+    <% }) %>  
+</div>  -->
+
+    
+    
+
+<%- include('./partials/footer') %>

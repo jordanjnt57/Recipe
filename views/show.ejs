@@ -1,0 +1,23 @@
+<%- include('./partials/header') %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header centered"><%= recipe.title%></div>
+    <div class="ui top attached ">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= recipe.image %>">
+            <div class="content">
+            <span> <%=recipe.created.toDateString()%></span>
+               <p class="ui"><%- recipe.body%></p> 
+            </div>
+            <a class="ui orange button" href="/recipes/<%=recipe._id%>/edit">Edit</a>
+            <form  id="delete" action="/recipes/<%=recipe._id%>?_method=DELETE" method="POST">
+            <button class="ui red basic button">Delete</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,26 @@
+<%- include('./partials/header') %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%=recipe.title%></div>
+    <form class="ui form" action="/recipes/<%=recipe._id%>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="recipe[title]" value="<%=recipe.title%>">
+        </div>
+        <div class="field">
+            <label>Image</label>
+            <input type="text" name="recipe[image]" value="<%=recipe.image%>">
+        </div>
+        <div class="field">
+            <label>Recipe Content</label>
+            <textarea name="recipe[body]"><%=recipe.body%></textarea>
+        </div>
+        <div>
+            <button class="ui button">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+
+<%- include('./partials/footer') %>
